@@ -28,7 +28,7 @@ class ObjectFactory
     {
         // We do not override $attributes because the reference manipulator will use the first element to generate the reference name
         $mergedAttributes = array_merge($this->defaultAttributes, $attributes);
-        $object = new $this->className();
+        $object = unserialize(sprintf('O:%d:"%s":0:{}', strlen($this->className), $this->className));
 
         foreach ($mergedAttributes as $attribute => $value) {
             $object->{'set'.ucfirst($attribute)}($value);
