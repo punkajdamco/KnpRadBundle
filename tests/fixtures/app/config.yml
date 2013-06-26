@@ -1,0 +1,16 @@
+framework:
+    secret:        test
+    csrf_protection:
+        enabled: true
+    router:        { resource: "%kernel.root_dir%/routing.yml" }
+    validation:    { enabled: true, enable_annotations: true }
+    templating:
+        engines: [twig]
+    form: ~
+    test: ~
+    default_locale: en
+    session:
+        storage_id:     session.storage.mock_file
+
+services:
+    logger: { class: Symfony\Component\HttpKernel\Log\NullLogger }

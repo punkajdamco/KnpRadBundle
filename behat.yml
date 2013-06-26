@@ -1,0 +1,17 @@
+default:
+  paths:
+    features: Features
+    bootstrap: %behat.paths.features%/Context
+  context:
+    class: Knp\RadBundle\Features\Context\FeatureContext
+  extensions:
+    Behat\Symfony2Extension\Extension:
+      mink_driver: true
+      kernel:
+        env: test
+        debug: true
+        path: test/fixtures/app/AppKernel.php
+        class: Knp\RadBundle\tests\fixtures\app\AppKernel
+    Behat\MinkExtension\Extension:
+      default_session: symfony2
+      show_cmd: "firefox %s"

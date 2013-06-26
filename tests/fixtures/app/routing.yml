@@ -1,0 +1,3 @@
+form:
+    pattern: /form
+    defaults: { _controller: App:Form:form }
